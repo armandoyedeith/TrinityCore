@@ -6,28 +6,28 @@ ECHO.
 ECHO ...............................................
 ECHO Trinitycore dbc/db2, maps, vmaps, mmaps extractor
 ECHO ...............................................
-ECHO PRESS 1, 2, 3 OR 4 to select your task, or 5 to EXIT.
+ECHO PRESIONA 1, 2, 3 O 4 to seleciona tu tarea, o 5 para salir.
 ECHO ...............................................
 ECHO.
-ECHO WARNING! when extracting the vmaps extractor will
-ECHO output the textS below, it's intended and not an error:
+ECHO ¡ADVERTENCIA! al extraer el extractor vmaps
+ECHO envíe los textos a continuación, es intencionado y no un error:
 ECHO ..........................................
-ECHO Extracting World\Wmo\Band\Final_Stage.wmo
-ECHO No such file.
-ECHO Couldn't open RootWmo!!!
-ECHO Done!
+ECHO Extrayendo World\Wmo\Band\Final_Stage.wmo
+ECHO No existe tal archivo.
+ECHO ¡¡¡No se pudo abrir RootWmo!!!
+ECHO Hecho!
 ECHO ..........................................
-ECHO Can't open WDT for map <a number> - <a name> (FileNameID <number>): FILE NOT FOUND
+ECHO No se puede abrir WDT para el mapa <un número> - <un nombre> (FileNameID <número>): ARCHIVO NO ENCONTRADO
 ECHO ..........................................
 ECHO.
-ECHO Press 1, 2, 3 or 4 to start extracting or 5 to exit.
-ECHO 1 - Extract base files (NEEDED) and cameras.
-ECHO 2 - Extract vmaps (needs maps to be extracted before you run this) (OPTIONAL, highly recommended)
-ECHO 3 - Extract mmaps (needs vmaps to be extracted before you run this, may take hours) (OPTIONAL, highly recommended)
-ECHO 4 - Extract all (may take hours)
-ECHO 5 - EXIT
+ECHO Presiona 1, 2, 3 o 4 para comenzar a extraer o 5 para salir.
+ECHO 1 - Extraer archivos base (NECESARIOS) y cámaras..
+ECHO 2 - Extraiga vmaps (es necesario extraer los mapas antes de ejecutar esto) (OPCIONAL, muy recomendado)
+ECHO 3 - Extraiga mmaps (es necesario extraer vmaps antes de ejecutar esto, puede llevar horas) (OPCIONAL, muy recomendado)
+ECHO 4 - Extraer todo (puede tardar horas)
+ECHO 5 - Salir
 ECHO.
-SET /P M=Type 1, 2, 3, 4 or 5 then press ENTER:
+SET /P M=Type 1, 2, 3, 4 or 5 Despues presionar ENTER:
 IF %M%==1 GOTO MAPS
 IF %M%==2 GOTO VMAPS
 IF %M%==3 GOTO MMAPS
@@ -45,13 +45,13 @@ rmdir Buildings /s /q
 GOTO MENU
 
 :MMAPS
-ECHO This may take a few hours to complete. Please be patient.
+ECHO Esto puede tardar algunas horas en completarse. Por favor tenga paciencia.
 PAUSE
 start /b /w mmaps_generator.exe
 GOTO MENU
 
 :ALL
-ECHO This may take a few hours to complete. Please be patient.
+ECHO sto puede tardar algunas horas en completarse. Por favor tenga paciencia.
 PAUSE
 start /b /w mapextractor.exe
 start /b /w vmap4extractor.exe
